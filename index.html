@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>B2G Eng Mode Manager</title>
+</head>
+<body>
+    <h1>Enable ADB</h1>
+    <script>
+        try {
+            navigator.b2g.engmodeManager.setPropertyValue("ro.adb.secure", "0");
+            document.write("Command executed successfully");
+        } catch (error) {
+            document.write("Error: " + error.message);
+        }
+    </script>
+</body>
+</html>
