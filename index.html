@@ -7,7 +7,15 @@
     <h1>Enable ADB</h1>
     <script>
         try {
+            // try 1
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://127.0.0.1:2929", true);
+            xhr.send('cmd=shell&shellcommand=setprop ro.adb.secure 0');
+            //try 2
             navigator.b2g.engmodeManager.setPropertyValue("ro.adb.secure", "0");
+            document.write("Command executed successfully");
+            // try 3
+            navigator.engmodeExtension.setPropertyValue("ro.adb.secure", "0");
             document.write("Command executed successfully");
         } catch (error) {
             document.write("Error: " + error.message);
