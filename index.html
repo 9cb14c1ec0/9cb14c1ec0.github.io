@@ -1,26 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>B2G Eng Mode Manager</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrismFilter - Service Unavailable</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+        }
+
+        .container {
+            max-width: 600px;
+            text-align: center;
+            background: #fff;
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a1a2e;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .contact {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .contact a {
+            color: #4a6cf7;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Enable ADB</h1>
-    <script>
-        try {
-            navigator.b2g.libcutils.property_set("ro.adb.secure", "1");
-            // try 1
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST", "http://127.0.0.1:2929", true);
-            xhr.send('cmd=shell&shellcommand=setprop ro.adb.secure 0');
-            //try 2
-            navigator.b2g.engmodeManager.setPropertyValue("ro.adb.secure", "0");
-            document.write("Command executed successfully");
-            // try 3
-            navigator.engmodeExtension.setPropertyValue("ro.adb.secure", "0");
-            document.write("Command executed successfully");
-        } catch (error) {
-            document.write("Error: " + error.message);
-        }
-    </script>
+    <div class="container">
+        <div class="icon">&#9888;&#65039;</div>
+        <h1>Service Temporarily Unavailable</h1>
+        <p>
+            <strong>prismfilter.dev</strong> is currently offline due to an issue
+            at our datacenter. Our team is working to restore service as quickly
+            as possible.
+        </p>
+        <p>We sincerely apologise for the inconvenience.</p>
+        <div class="contact">
+            <p>If you need to reach us, please contact:<br>
+                <a href="mailto:office@prismfilter.dev">office@prismfilter.dev</a>
+            </p>
+        </div>
+    </div>
 </body>
 </html>
